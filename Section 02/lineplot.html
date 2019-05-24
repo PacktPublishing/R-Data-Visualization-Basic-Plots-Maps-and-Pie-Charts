@@ -1,0 +1,189 @@
+<!-- LineChart generated in R 3.3.1 by googleVis 0.6.2 package -->
+<!-- Sat Apr 15 13:13:00 2017 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+
+
+// jsData 
+function gvisDataLineChartID18cc143050d6 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"1980-85",
+1.91,
+1.596,
+1.596,
+1.634,
+2.671,
+2.042352941
+],
+[
+"1990-95",
+1.86,
+1.484,
+1.612,
+1.694,
+2.55,
+1.827529412
+],
+[
+"2000-05",
+1.753,
+1.38,
+1.684,
+1.516,
+2,
+1.650382353
+],
+[
+"2010-15",
+1.878,
+1.466,
+1.848,
+1.663,
+1.826,
+1.739529412
+],
+[
+"2020-25",
+1.867,
+1.574,
+1.887,
+1.737,
+1.773,
+1.773147059
+],
+[
+"2030-35",
+1.861,
+1.655,
+1.912,
+1.785,
+1.773,
+1.800205882
+],
+[
+"2040-45",
+1.859,
+1.713,
+1.928,
+1.819,
+1.786,
+1.822029412
+],
+[
+"2050-55",
+1.86,
+1.757,
+1.937,
+1.843,
+1.803,
+1.847102941
+],
+[
+"2060-65",
+1.863,
+1.789,
+1.945,
+1.86,
+1.821,
+1.854470588
+] 
+];
+data.addColumn('string','Year');
+data.addColumn('number','Australia');
+data.addColumn('number','Austria');
+data.addColumn('number','Belgium');
+data.addColumn('number','Canada');
+data.addColumn('number','Chile');
+data.addColumn('number','OECD34');
+data.addRows(datajson);
+return(data);
+}
+
+
+// jsDrawChart
+function drawChartLineChartID18cc143050d6() {
+var data = gvisDataLineChartID18cc143050d6();
+var options = {};
+options["allowHtml"] = true;
+options["width"] = 1100;
+options["height"] = 500;
+options["backgroundColor"] = "#FFFF99";
+options["title"] = "Fertility Rate in OECD countries";
+options["vAxis"] = {title : 'Total Fertility
+                                        Rate',gridlines:{color:'#DEDECE',count : 4}, ticks :
+                                        [0,1,2,3,4]};
+options["series"] = {0:{color:'black', visibleInLegend :false},
+                                         1:{color:'BDBD9D', visibleInLegend :false},
+                                         2:{color:'BDBD9D', visibleInLegend :false},
+                                         3:{color:'BDBD9D', visibleInLegend :false},
+                                         4:{color:'BDBD9D', visibleInLegend :false},
+                                         34:{color:'3333FF', visibleInLegend :true}};
+
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID18cc143050d6')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+
+
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID18cc143050d6);
+})();
+function displayChartLineChartID18cc143050d6() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+
+
+// jsFooter
+</script>
+
+
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID18cc143050d6"></script>
+
+
+<!-- divChart -->
+  
+<div id="LineChartID18cc143050d6" 
+  style="width: 1100; height: 500;">
+</div>

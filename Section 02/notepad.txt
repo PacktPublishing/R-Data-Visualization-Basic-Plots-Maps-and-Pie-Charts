@@ -1,0 +1,90 @@
+install.packages("googleVis")
+library(googleVis)
+
+frt = read.csv("fertility.csv", header = TRUE, sep =",")
+
+
+line = gvisLineChart(frt, xvar = "Year", 
+                     yvar=c("Australia","Austria","Belgium","Canada","Chile","OECD34"), 
+                     options = list( width = 1100, height= 500, backgroundColor = "#FFFF99",
+                                     title ="Fertility Rate in OECD countries" ,
+                                     vAxis = "{title : 'Total Fertility Rate',gridlines:{color:'#DEDECE',count : 4}, ticks : [0,1,2,3,4]}",
+                                     series = "{0:{color:'black', visibleInLegend :false},
+                                     1:{color:'BDBD9D', visibleInLegend :false},
+                                     2:{color:'BDBD9D', visibleInLegend :false},
+                                     3:{color:'BDBD9D', visibleInLegend :false},
+                                     4:{color:'BDBD9D', visibleInLegend :false},
+                                     34:{color:'3333FF', visibleInLegend :true}}"))
+plot(line)
+
+
+line = gvisLineChart(frt, xvar = "Year", yvar=c("Australia","Austria","Belgium","Canada","Chile","Czech.Republic",
+                                         "Denmark","Estonia","Finland","France","Germany","Greece","Hungary",
+                                         "Iceland","Ireland","Israel",
+                                         "Italy","Japan","Korea","Luxembourg","Mexico",
+                                         "Netherlands","New.Zealand","Norway","Poland","Portugal",
+                                         "Slovakia","Slovenia","Spain","Sweden","Switzerland",
+                                         "Turkey","United.Kingdom","United.States","OECD34"), 
+                     options = list( width = 1200, backgroundColor = "#ADAD85",title ="Fertility Rate in OECD countries" ,
+                                     vAxis = "{gridlines:{color:'#DEDECE',count : 3}, ticks : [0,1,2,3,4]}",
+                                     series = "{0:{color:'BDBD9D', visibleInLegend :false},
+                                     20:{color:'009933', visibleInLegend :true},
+                                     31:{color:'996600', visibleInLegend :true},
+                                     34:{color:'3333FF', visibleInLegend :true}}"))
+
+
+install.packages("dendroextras")
+library(dendroextras)
+
+data(USArrests)
+
+View(USArrests)
+
+par(mar = c(2,10,2,10), cex = 0.6)
+
+clst1=colour_clusters(hclust(dist(USArrests),
+                             "ave"),5,groupLabels=as.roman)
+par(mar = rep(2, 4))
+
+plot(clst1, main = "Dendrogram with 5 clusters", horiz = TRUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
